@@ -20,4 +20,4 @@ In the exercises in this lab you will build a end to end scenarios using sample 
 
 ## Architecture
 
-:::image type="content" source="media/cosmodb-reference-architecture.png" alt-text="cosmodb reference architecture":::
+![](media/cosmodb-reference-architecture.png) 
