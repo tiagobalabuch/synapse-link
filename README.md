@@ -36,37 +36,3 @@ In this lab, you will walk through a complete end-to-end scenario to analyze lar
 Using [Azure Cosmos DB analytical store](https://docs.microsoft.com/en-us/azure/cosmos-db/analytical-store-introduction), a fully isolated column store, Azure Synapse Link enables no Extract-Transform-Load (ETL) analytics in Azure Synapse Analytics against your operational data at scale.
 
 You will configure the Azure environment to allow data to be transferred from an Azure Cosmos DB to an Azure Synapse Analytics Workspace using Azure Synapse Link for Cosmos DB. You will also ingest data into Cosmos DB, explore spark pool together with Azure Machine Learning and Azure Cognitive Services on Synapse Spark (MMLSpark).
-
-### Azure Services used in this lab
-
-There will be a few resources to support an Azure Synapse link for CosmosDB:
-
-- An Azure Resource Group
-- An Azure Synapse Workspace
-- An Azure Synapse SQL Pool **rever**
-- An Azure Synapse Spark Pool
-- An Azure Data Lake Storage Gen2 account
-- A key vault to store the secrets
-- CosmosDB Database (CosmosDemoDB)
-- CosmosDB Containers with Analytical Store Enabled
-  - Products
-  - StoreDemoGraphics
-  - RetailSales
-  - IoTDeviceInfo
-  - IoTSignals
-- AML workspace
-- Azure Cognitive Service
-- PySpark Notebook to:
-  - Ingest batch data into CosmosDB containers
-  - Fetch data from CosmosDB
-  - Join dataset together
-  - Perform Sales Forecasting using Azure Synapse Link and Azure Machine Learning
-- PySpark Notebook to:
-- Ingest stream and batch data into CosmosDB containers
-- Fetch data from CosmosDB
-- Join dataset together
-- Perform Anomaly Detection using Azure Synapse Link and Azure Cognitive Services on Synapse Spark Pool (MMLSpark)
-
-## Deployment
-
-
