@@ -47,7 +47,7 @@ There will be a few resources to support an Azure Synapse link for CosmosDB:
 
 # Lab architecture
 
-![](../../media/cosmodb-reference-architecture.png)
+![](../../media/cosmosdb-reference-architecture.png)
 
 **IMPORTANT:** Some of the Azure services provisioned require globally unique name and a “-suffix” has been added to their names to ensure this uniqueness. Please take note of the suffix generated as you will need it for the following resources in this lab:
 
@@ -81,19 +81,47 @@ Synapse Link creates a tight seamless integration between Azure Cosmos DB and Az
 
 ### Create a Azure Cosmos DB Database and container
 
-You have to create one database "ComosDBDemo" and five containers:
-- **IoTDeviceInfo**
-  - Partition Key: /id
-- **IoTSignals**
-  - Partition Key: /id
-- **Product**
-  - Partition Key: /id
-- **RetailSales**
-  - Partition Key: /id
-- **StoreDemoGraphics**
-  - Partition Key: /id
+1. Start creating a new database into your Cosmos DB account. [How to create a database and container in Azure Cosmos DB SQL API](https://docs.microsoft.com/en-us/azure/cosmos-db/configure-synapse-link#create-analytical-ttl)
+
+   - **Database id**: CosmosDBDemo
+   - **Share throughput across containers:** Enable
+   - **Database throughput(autoscale)**: Autoscale
+   - **Database Max RU/s**: 4000
+
+2. Now, you have to create five containers:
+
+   - *IoTDeviceInfo*
+     - Partition Key: /id
+     - ***Analytical store***: ON
+   - *IoTSignals*
+     - Partition Key: /id
+     - ***Analytical store***: ON
+   - *Product*
+     - Partition Key: /id
+     - ***Analytical store***: ON
+   - *RetailSales*
+     - Partition Key: /id
+     - ***Analytical store***: ON
+   - *StoreDemoGraphics*
+     - Partition Key: /id
+     - ***Analytical store***: ON
 
 > [!WARNING]
+>
 > Keep in mind that in all container you must enable analytical store
 
-[How to create a database and container in Azure Cosmos DB SQL API](https://docs.microsoft.com/en-us/azure/cosmos-db/configure-synapse-link#create-analytical-ttl)
+![](../../media/cosmosdb-database-containers.png)
+
+### Create a Spark pool
+
+Apache Spark is a parallel processing framework that supports in-memory processing to boost the performance of big data analytic applications and
+An Apache Spark pool provides open-source big data compute capabilities.
+
+1. Start creating a Apache Spark pool into you Azure Synapse Analytics workspace. [Create a new serverless Apache Spark pool](https://docs.microsoft.com/en-us/azure/synapse-analytics/quickstart-create-apache-spark-pool-portal).
+   
+- **Apache Spark pool name**: demo
+- **Node size family**: Memory Optimized
+- **Node size**: Medium (8 vCores / 64 GB)
+- **Autoscale**: Enable
+- **Automatic pausing**: Enable
+- **Apache Spark**: 3.2
