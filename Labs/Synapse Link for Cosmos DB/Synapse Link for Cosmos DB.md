@@ -30,10 +30,10 @@ There will be a few resources to support an Azure Synapse link for CosmosDB:
   - Join dataset together
   - Perform Sales Forecasting using Azure Synapse Link and Azure Machine Learning
 - PySpark Notebook to:
-- Ingest stream and batch data into CosmosDB containers
-- Fetch data from CosmosDB
-- Join dataset together
-- Perform Anomaly Detection using Azure Synapse Link and Azure Cognitive Services on Synapse Spark Pool (MMLSpark)
+  - Ingest stream and batch data into CosmosDB containers
+  - Fetch data from CosmosDB
+  - Join dataset together
+  - Perform Anomaly Detection using Azure Synapse Link and Azure Cognitive Services on Synapse Spark Pool (MMLSpark)
 
 ## Microsoft Learn & Technical Documentation
 
@@ -43,3 +43,35 @@ There will be a few resources to support an Azure Synapse link for CosmosDB:
 |Azure Synapse Analytics | [Implement a Data Warehouse with Azure Synapse Analytics](https://docs.microsoft.com/en-us/learn/paths/realize-integrated-analytical-solutions-with-azure-synapse-analytics)| [Azure Synapse Analytics Technical Documentation](https://docs.microsoft.com/en-us/azure/synapse-analytics/)|
 |Azure Data Lake Storage Gen2 | [Large Scale Data Processing with Azure Data Lake Storage Gen2](https://docs.microsoft.com/en-us/learn/paths/data-processing-with-azure-adls) | [Azure Data Lake Storage Gen2 Technical Documentation](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction)|
 |Azure Cognitive Anomaly Detector Services| [Introduction to Anomaly Detector](https://docs.microsoft.com/en-us/learn/modules/intro-to-anomaly-detector/)| [Azure Cognitive Anomaly Detector Technical Documentation](https://docs.microsoft.com/en-us/azure/cognitive-services/anomaly-detector/)|
+
+# Lab architecture
+
+![](../../media/cosmodb-reference-architecture.png)
+
+**IMPORTANT:** Some of the Azure services provisioned require globally unique name and a “-suffix” has been added to their names to ensure this uniqueness. Please take note of the suffix generated as you will need it for the following resources in this lab:
+
+| Name | Type |
+|:--------------- |:----------------------- |
+|synapse-link-*suffix*| Azure Synapse Analytics Workspace|
+|synapsedatalake*suffix*|Storage Account Data Lake Gen 2|
+|anomaly-detector-*suffix*| Azure Synapse Analytics Workspace|
+
+## Deploying resources
+
+Make sure you deploy all the resources in the following order:
+
+| Azure Service | How to |
+|:---- |:----- |
+| Resource Group |[Create a Resource Group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups)
+| Storage Account |[Create an Azure Data Lake Storage Gen2 account](https://docs.microsoft.com/en-us/azure/storage/blobs/create-data-lake-storage-account)|
+|Anomaly Detector|[Create an Azure Cognitive Service Anomaly Detector](https://docs.microsoft.com/en-us/azure/cognitive-services/anomaly-detector/how-to/deploy-anomaly-detection-on-iot-edge#create-an-anomaly-detector-resource)|
+|Azure Synapse Analytics | [Create an Azure Synapse Analytics](https://docs.microsoft.com/en-us/azure/synapse-analytics/quickstart-create-workspace)|
+| Azure Cosmos DB|[Create an Azure Cosmos DB account](https://docs.microsoft.com/en-us/azure/cosmos-db/sql/create-cosmosdb-resources-portal#create-an-azure-cosmos-db-account)|
+|Azure Key Vault| [Create an Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/quick-create-portal)|
+
+- Resource Group - [Create a Resource Group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups)
+- Storage Account - [Create an Azure Data Lake Storage Gen2 account](https://docs.microsoft.com/en-us/azure/storage/blobs/create-data-lake-storage-account)
+- Anomaly Detector - [Create an Azure Cognitive Service Anomaly Detector](https://docs.microsoft.com/en-us/azure/cognitive-services/anomaly-detector/how-to/deploy-anomaly-detection-on-iot-edge#create-an-anomaly-detector-resource)
+- Azure Synapse Analytics - [Create an Azure Synapse Analytics](https://docs.microsoft.com/en-us/azure/synapse-analytics/quickstart-create-workspace)
+- Azure Cosmos DB - [Create an Azure Cosmos DB account](https://docs.microsoft.com/en-us/azure/cosmos-db/sql/create-cosmosdb-resources-portal#create-an-azure-cosmos-db-account)
+- Azure Key Vault - [Create an Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/quick-create-portal)
