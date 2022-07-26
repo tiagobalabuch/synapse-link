@@ -4,9 +4,9 @@ In this section you will provision all Azure resources required to complete labs
 
 ## Azure services provisioned for the workshop
 
-**IMPORTANT:** Some of the Azure services provisioned require globally unique name and a “-suffix” has been added to their names to ensure this uniqueness. 
+Some of the Azure services provisioned require globally unique name and a “-suffix” has been added to their names to ensure this uniqueness.
 
-> [!IMPORTANT]
+> [!CAUTION]
 > Make sure you deploy all the resources in the correct order
 
 | Order | Azure Service | Name | How to |
