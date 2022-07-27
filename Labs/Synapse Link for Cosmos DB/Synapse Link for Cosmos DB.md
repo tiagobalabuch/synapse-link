@@ -56,7 +56,7 @@ Let's double-check and verify if Cosmos DB Analytical store and containers are c
 **In Azure Synapse Analytics Studio**
 
 1. Navigate to 'Data' section in the left panel and then to the 'Linked' menu option.
-Expand 'Azure CosmosDB', There will be five containers listed with 'Analytical Store' enabled.
+2. Expand 'Azure CosmosDB', There will be five containers listed with 'Analytical Store' enabled.
 ![synapse-studio-data-link-cosmodb-containers](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-data-link-cosmodb-containers.png)
 
 ### Notebooks
