@@ -2,6 +2,37 @@
 
 In this section you will provision all Azure resources required to complete labs. We will use a pre-defined ARM template with the definition of all Azure services used to ingest, store, process and visualize data.
 
+## Azure Services used in this lab
+
+There will be a few resources to support an Azure Synapse link for CosmosDB:
+
+- An Azure Resource Group
+- An Azure Synapse Workspace
+- An Azure Synapse SQL Pool **rever**
+- An Azure Synapse Spark Pool
+- An Azure Data Lake Storage Gen2 account
+- A key vault to store the secrets
+- Cosmos DB account - Core (SQL)
+- CosmosDB Database (CosmosDemoDB)
+- CosmosDB Containers with Analytical Store Enabled
+  - Products
+  - StoreDemoGraphics
+  - RetailSales
+  - IoTDeviceInfo
+  - IoTSignals
+- AML workspace
+- Azure Cognitive Service
+- PySpark Notebook to:
+  - Ingest batch data into CosmosDB containers
+  - Fetch data from CosmosDB
+  - Join dataset together
+  - Perform Sales Forecasting using Azure Synapse Link and Azure Machine Learning
+- PySpark Notebook to:
+  - Ingest stream and batch data into CosmosDB containers
+  - Fetch data from CosmosDB
+  - Join dataset together
+  - Perform Anomaly Detection using Azure Synapse Link and Azure Cognitive Services on Synapse Spark Pool (MMLSpark)
+
 ## Azure services provisioned for the workshop
 
 Some of the Azure services provisioned require globally unique name and a “-suffix” has been added to their names to ensure this uniqueness.
@@ -9,14 +40,14 @@ Some of the Azure services provisioned require globally unique name and a “-su
 > [!CAUTION]
 > Make sure you deploy all the resources in the correct order
 
-| Order | Azure Service | Name | How to |
-| :--:  |:----          |:----- |:----- |
-| 1     | Resource Group | synapse-link |[Create a Resource Group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups)
-| 2     | Storage Account Data Lake Gen 2| synapsedatalake*suffix* |[Create an Azure Data Lake Storage Gen2 account](https://docs.microsoft.com/en-us/azure/storage/blobs/create-data-lake-storage-account)|
-| 3     |Anomaly Detector| anomaly-detector-*suffix* |[Create an Azure Cognitive Service Anomaly Detector](https://docs.microsoft.com/en-us/azure/cognitive-services/anomaly-detector/how-to/deploy-anomaly-detection-on-iot-edge#create-an-anomaly-detector-resource)|
-| 4     |Azure Synapse Analytics |  synapse-link-*suffix* |[Create an Azure Synapse Analytics](https://docs.microsoft.com/en-us/azure/synapse-analytics/quickstart-create-workspace)|
-| 5     | Azure Cosmos DB| cosmosdb-link-*suffix* |[Create an Azure Cosmos DB account](https://docs.microsoft.com/en-us/azure/cosmos-db/sql/create-cosmosdb-resources-portal#create-an-azure-cosmos-db-account)|
-| 6     |Azure Key Vault|  key-vault-*suffix* | [Create an Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/quick-create-portal)|
+| Order | Azure Service | Name   | Pricing Tier    | How to |
+| :--:  |:----          |:----- | :----   |:----- |
+| 1     | Resource Group | synapse-link |   | [Create a Resource Group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups)
+| 2     | Storage Account Data Lake Gen 2| synapsedatalake*suffix* |    |[Create an Azure Data Lake Storage Gen2 account](https://docs.microsoft.com/en-us/azure/storage/blobs/create-data-lake-storage-account)|
+| 3     |Anomaly Detector| anomaly-detector-*suffix* | Free  |[Create an Azure Cognitive Service Anomaly Detector](https://docs.microsoft.com/en-us/azure/cognitive-services/anomaly-detector/how-to/deploy-anomaly-detection-on-iot-edge#create-an-anomaly-detector-resource)|
+| 4     |Azure Synapse Analytics |  synapse-link-*suffix* | |[Create an Azure Synapse Analytics](https://docs.microsoft.com/en-us/azure/synapse-analytics/quickstart-create-workspace)|
+| 5     | Azure Cosmos DB| cosmosdb-link-*suffix* | 4000 RU/sec |[Create an Azure Cosmos DB account](https://docs.microsoft.com/en-us/azure/cosmos-db/sql/create-cosmosdb-resources-portal#create-an-azure-cosmos-db-account)|
+| 6     |Azure Key Vault|  key-vault-*suffix* | Standard |[Create an Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/quick-create-portal)|
 
 After deploying all Azure services, it's time to set up some other resources like enable Synapse Link for Cosmos DB, Cosmos DB Database and containers and Spark Pool.
 
@@ -72,3 +103,12 @@ An Apache Spark pool provides open-source big data compute capabilities.
 - **Autoscale**: Enable
 - **Automatic pausing**: Enable
 - **Apache Spark**: 3.2
+
+## One click deploy
+
+Create ARM Template
+
+## Post Deployment
+
+After the deployment is complete, click 'Go to resource group'.
+You'll see all the resources deployed in the resource group.
