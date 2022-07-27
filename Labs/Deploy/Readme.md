@@ -44,10 +44,22 @@ Some of the Azure services provisioned require globally unique name and a “-su
 | :--:  |:----          |:----- | :----   |:----- |
 | 1     | Resource Group | synapse-link |   | [Create a Resource Group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups)
 | 2     | Storage Account Data Lake Gen 2| synapsedatalake*suffix* |    |[Create an Azure Data Lake Storage Gen2 account](https://docs.microsoft.com/en-us/azure/storage/blobs/create-data-lake-storage-account)|
+| 3 | Storage Account | synapselinkml*suffix* | | [Create a storage account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=azure-portal)|
 | 3     |Anomaly Detector| anomaly-detector-*suffix* | Free  |[Create an Azure Cognitive Service Anomaly Detector](https://docs.microsoft.com/en-us/azure/cognitive-services/anomaly-detector/how-to/deploy-anomaly-detection-on-iot-edge#create-an-anomaly-detector-resource)|
 | 4     |Azure Synapse Analytics |  synapse-link-*suffix* | |[Create an Azure Synapse Analytics](https://docs.microsoft.com/en-us/azure/synapse-analytics/quickstart-create-workspace)|
 | 5     | Azure Cosmos DB| cosmosdb-link-*suffix* | 4000 RU/sec |[Create an Azure Cosmos DB account](https://docs.microsoft.com/en-us/azure/cosmos-db/sql/create-cosmosdb-resources-portal#create-an-azure-cosmos-db-account)|
 | 6     |Azure Key Vault|  key-vault-*suffix* | Standard |[Create an Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/quick-create-portal)|
+| 7 | Log Analytics Workspace | log-analytics-*suffix*| | [Create a Log Analytics workspace](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/quick-create-workspace?tabs=azure-portal)|
+| 7 | Application Insights | application-insights-*suffix*||[Create an Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/create-new-resource)
+| 7| Azure Machine Learning |aml-workspace-*suffix*  | a |[Create as Azure Machine Learning Workspace](https://docs.microsoft.com/en-us/azure/machine-learning/quickstart-create-resources)|
+
+### Azure Machine Learning deployment
+
+When deploying a Azure Machine Learning make sure to use:
+
+- **Storage account**: synapselinkml*suffix*
+- **Key Vault**: key-vault-*suffix*
+- **Application Insights**: application-insights-*suffix*
 
 After deploying all Azure services, it's time to set up some other resources like enable Synapse Link for Cosmos DB, Cosmos DB Database and containers and Spark Pool.
 
@@ -103,6 +115,25 @@ An Apache Spark pool provides open-source big data compute capabilities.
 - **Autoscale**: Enable
 - **Automatic pausing**: Enable
 - **Apache Spark**: 3.2
+
+### Granting permission for Azure Synapse Analytics
+
+Now, you have to grant permission for Azure Synapse Analytics workspace to access the Azure Machine Learning Workspace.
+
+[Give MSI permission to the Azure ML workspace](https://docs.microsoft.com/en-us/azure/synapse-analytics/machine-learning/quickstart-integrate-azure-machine-learning#give-msi-permission-to-the-azure-ml-workspace)
+
+1. Open your Azure Machine Learning resource
+2. Navigate to 'Access control (IAM)' section in the left panel and then click '*+ Add*'.
+![azure-ml-IAM](../../media/azure-ml-IAM.png)
+3. Select '*Add role assignment*'
+4. Select '*Contributor*' role anc click '*Next*'
+![azure-ml-IAM-role](../../media/azure-ml-IAM-role.png)
+5. Select '*+ Select members*' and find out the Azure Synapse Analytics Workspace (synapse-link-*suffix*) you created previously.
+![azure-ml-IAM-member](../../media/azure-ml-IAM-member.png)
+6. Click '*Review + assign*'
+
+> [!IMPORTANT]
+> We will create a linked services during the lab.
 
 ## One click deploy
 
