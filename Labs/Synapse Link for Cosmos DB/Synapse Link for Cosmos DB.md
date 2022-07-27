@@ -41,6 +41,7 @@ You will configure the Azure environment to allow data to be transferred from an
    3. Database Name: **CosmosDBDemo**
 7. Click Test connection
 8. Click '*Create*' to save the changes
+
 ![synapse-studio-linked-services-cosmodb-settings](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-cosmodb-settings.png)
 
 ### Navigating through Cosmos DB using Synapse Link
