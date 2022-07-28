@@ -35,16 +35,16 @@ You will configure the Azure environment to allow data to be transferred from an
 ![synapse-studio-linked-service](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services.png)
 2. Choose "Azure Machine Learning" click '*Continue*' to open up configuration settings.
 ![](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-aml.png)
-1. Name: **AzureMLServices**
-2. Connect via IR: **AutoResoveIntegrationRuntime**
-3. Authentication type: **System Assigned Managed Identity**
-4. Account selection method: **From Azure Subscription**
+3. Name: **AzureMLServices**
+4. Connect via IR: **AutoResoveIntegrationRuntime**
+5. Authentication type: **System Assigned Managed Identity**
+6. Account selection method: **From Azure Subscription**
    1. Azure Subscription: **Use your subscription**
    2. Azure Machine Learning workspace name: **aml-workspace-*suffix***
-5. Click Test connection
-6. Click '*Create*' to save the changes.
-![synapse-studio-linked-service](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-aml-settings.png)
+7. Click Test connection
+8. Click '*Create*' to save the changes.
 
+![synapse-studio-linked-service](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-aml-settings.png)
 
 ## Configuring Synapse Link for CosmosDB
 
@@ -64,10 +64,7 @@ You will configure the Azure environment to allow data to be transferred from an
 
 ![synapse-studio-linked-services-cosmodb-settings](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-cosmodb-settings.png)
 
-
-
-
-### Navigating through Cosmos DB using Synapse Link
+### Validating Synapse Link for Cosmos DB
 
 Let's double-check and verify if Cosmos DB Analytical store and containers are correctly setting up.
 
@@ -94,7 +91,10 @@ There are two notebooks to you explore and learn:
 - 1-SalesForecastingWithAML
 - 2-AnomalyDetectionWithMML
 
-First lets [import these notebooks](https://docs.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-development-using-notebooks#create-a-notebook)) into the Azure Synapse Analytics workspace.
+First lets [import](https://docs.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-development-using-notebooks#create-a-notebook)  these notebooks into the Azure Synapse Analytics workspace.
+
+> [!TIP]
+> Do not forget to Publish
 
 In Synapse Studio click on the 'Develop' icon in the left panel and navigate to the 'Notebooks' section.
 There are two Notebooks available '1-SalesForecastingWithAML' and '2-AnomalyDetectionWithMML'.

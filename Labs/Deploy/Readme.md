@@ -114,7 +114,9 @@ An Apache Spark pool provides open-source big data compute capabilities.
 - **Node size**: Medium (8 vCores / 64 GB)
 - **Autoscale**: Enable
 - **Automatic pausing**: Enable
-- **Apache Spark**: 3.2
+- **Apache Spark**: 2.4
+
+Unfortunately, Spark 2.4 is a prerequisite from [train a machine learning model](https://docs.microsoft.com/en-us/azure/synapse-analytics/machine-learning/tutorial-automl#prerequisites)
 
 ### Granting permission for Azure Synapse Analytics
 
