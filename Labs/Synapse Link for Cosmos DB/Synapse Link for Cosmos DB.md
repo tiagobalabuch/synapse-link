@@ -98,7 +98,7 @@ First lets [import](https://docs.microsoft.com/en-us/azure/synapse-analytics/spa
 > [!TIP]
 > Do not forget to Publish All
 
-:::image type="content" source="../../media/Lab Synapse Link for Cosmos DB/synapse-studio-publish-all.png" alt-text="publish-all":::
+![publish-all](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-publish-all.png)
 
 In Synapse Studio click on the 'Develop' icon in the left panel and navigate to the 'Notebooks' section.
 
