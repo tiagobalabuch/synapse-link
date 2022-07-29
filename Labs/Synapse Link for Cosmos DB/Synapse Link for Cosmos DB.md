@@ -96,12 +96,22 @@ There are two notebooks to you explore and learn:
 First lets [import](https://docs.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-development-using-notebooks#create-a-notebook)  these notebooks into the Azure Synapse Analytics workspace.
 
 > [!TIP]
-> Do not forget to Publish
+> Do not forget to Publish All
+
+:::image type="content" source="../../media/Lab Synapse Link for Cosmos DB/synapse-studio-publish-all.png" alt-text="publish-all":::
 
 In Synapse Studio click on the 'Develop' icon in the left panel and navigate to the 'Notebooks' section.
-There are two Notebooks available '1-SalesForecastingWithAML' and '2-AnomalyDetectionWithMML'.
-Follow the instructions in each cell of Notebook to execute:
-Ingest Data into CosmosDB containers using Synapse Link for CosmosDB
-Create Spark tables out of CosmosDB using Synapse link for CosmosDB
-Join spark tables using Synapse spark serverless
-Execute Machine learning model on this dataset using Azure ML
+
+Let's start with the first notebook - 1-SalesForecastingWithAML
+
+#### 1-SalesForecastingWithAML
+
+In this notebook we are going to leverage the power of Azure Synapse Link for Cosmos DB using PySpark.
+With Synapse Link, you can now directly connect to your Azure Cosmos DB containers from Azure Synapse Analytics and access the analytical store with no separate connectors. This notebook will cover:
+
+- Ingest data into Cosmos DB containers using Azure Synapse Spark
+- Create Spark Hive tables
+- Join & aggregate operational data across Cosmos DB containers
+- Perform Near real-time Sales Forecasting using Azure Automated Machine Learning using Synapse Link for Cosmos DB
+
+
