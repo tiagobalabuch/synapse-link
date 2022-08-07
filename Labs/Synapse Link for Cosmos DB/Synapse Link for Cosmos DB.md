@@ -1,7 +1,7 @@
 # Lab - Synapse Link for Cosmos DB
 
 > [!NOTE]
-> This lab was built based on this [Microsoft repository](https://github.com/Azure/Test-Drive-Synapse-Link-For-CosmosDB-With-1-Click)
+> This lab was based on this [Microsoft repository](https://github.com/Azure/Test-Drive-Synapse-Link-For-CosmosDB-With-1-Click)
 
 In this lab, you will walk through a complete end-to-end scenario to analyze large operational datasets while minimizing the impact on the performance of mission-critical transactional workloads,
 Using [Azure Cosmos DB analytical store](https://docs.microsoft.com/en-us/azure/cosmos-db/analytical-store-introduction), a fully isolated column store, Azure Synapse Link enables no Extract-Transform-Load (ETL) analytics in Azure Synapse Analytics against your operational data at scale.
@@ -21,9 +21,9 @@ You will configure the Azure environment to allow data to be transferred from an
 
 # Lab architecture
 
-![](../../media/cosmosdb-reference-architecture.png)
+![cosmosdb-reference-architecture](../../media/Synapse%20Link%20for%20Cosmos%20DB/cosmosdb-reference-architecture.png)
 
-- STEP 1 - Configuring linked services for Azure ML
+- STEP 1 - [Configuring linked services for Azure ML](Synapse%20Link%20for%20Cosmos%20DB.md#Configuring-linked-services-for-Azure-ML)
 - STEP 1 - Configuring Synapse Link for CosmosDB
 - STEP 2 - Navigating through Cosmos DB using Synapse Link
 - STEP  -  Exploring data using Apache Spark Pool
@@ -36,7 +36,7 @@ You will configure the Azure environment to allow data to be transferred from an
 1. In Synapse Studio click on the 'Manage' icon in the left panel and navigate to 'Linked Services' menu option and click '*+New*'.
 ![synapse-studio-linked-service](../../media/Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services.png)
 2. Choose "Azure Machine Learning" click '*Continue*' to open up configuration settings.
-![](../../media/Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-aml.png)
+![synapse-studio-linked-services-aml](../../media/Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-aml.png)
 3. Name: **AzureMLServices**
 4. Connect via IR: **AutoResoveIntegrationRuntime**
 5. Authentication type: **System Assigned Managed Identity**
