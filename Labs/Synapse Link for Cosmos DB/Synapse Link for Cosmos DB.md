@@ -6,7 +6,7 @@
 In this lab, you will walk through a complete end-to-end scenario to analyze large operational datasets while minimizing the impact on the performance of mission-critical transactional workloads,
 Using [Azure Cosmos DB analytical store](https://docs.microsoft.com/en-us/azure/cosmos-db/analytical-store-introduction), a fully isolated column store, Azure Synapse Link enables no Extract-Transform-Load (ETL) analytics in Azure Synapse Analytics against your operational data at scale.
 
-You will configure the Azure environment to allow data to be transferred from an Azure Cosmos DB to an Azure Synapse Analytics Workspace using Azure Synapse Link for Cosmos DB. You will also ingest data into Cosmos DB, explore spark pool together with Azure Machine Learning and Azure Cognitive Services on Synapse Spark (MMLSpark).
+You will configure the Azure environment to allow data to be transferred from an Azure Cosmos DB to an Azure Synapse Analytics Workspace using Azure Synapse Link for Cosmos DB. You will also ingest data into Cosmos DB, explore spark pool together with Azure Machine Learning and Azure Cognitive Services on [SynapseML](https://microsoft.github.io/SynapseML/).
 
 ## Microsoft Learn & Technical Documentation
 
@@ -34,9 +34,9 @@ You will configure the Azure environment to allow data to be transferred from an
 [Create an Azure ML linked service](https://docs.microsoft.com/en-us/azure/synapse-analytics/machine-learning/quickstart-integrate-azure-machine-learning#create-an-azure-ml-linked-service)
 
 1. In Synapse Studio click on the 'Manage' icon in the left panel and navigate to 'Linked Services' menu option and click '*+New*'.
-![synapse-studio-linked-service](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services.png)
+![synapse-studio-linked-service](../../media/Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services.png)
 2. Choose "Azure Machine Learning" click '*Continue*' to open up configuration settings.
-![](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-aml.png)
+![](../../media/Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-aml.png)
 3. Name: **AzureMLServices**
 4. Connect via IR: **AutoResoveIntegrationRuntime**
 5. Authentication type: **System Assigned Managed Identity**
@@ -46,14 +46,14 @@ You will configure the Azure environment to allow data to be transferred from an
 7. Click Test connection
 8. Click '*Create*' to save the changes.
 
-![synapse-studio-linked-service](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-aml-settings.png)
+![synapse-studio-linked-service](../../media/Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-aml-settings.png)
 
 ## Configuring Synapse Link for CosmosDB
 
 1. In Synapse Studio click on the 'Manage' icon in the left panel and navigate to 'Linked Services' menu option and click '*+New*'.
-![synapse-studio-linked-service](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services.png)
+![synapse-studio-linked-service](../../media/Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services.png)
 2. Choose Azure Cosmos DB (SQL API) and click '*Continue*' to open up configuration settings.
-![synapse-studio-linked-services-cosmodb-sql-api](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-cosmodb-sql-api.png)
+![synapse-studio-linked-services-cosmodb-sql-api](../../media/Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-cosmodb-sql-api.png)
 3. Name: **CosmosDBLink**
 4. Connect via IR: **AutoResoveIntegrationRuntime**
 5. Authentication type: **Account Key**
@@ -64,7 +64,7 @@ You will configure the Azure environment to allow data to be transferred from an
 7. Click Test connection
 8. Click '*Create*' to save the changes
 
-![synapse-studio-linked-services-cosmodb-settings](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-cosmodb-settings.png)
+![synapse-studio-linked-services-cosmodb-settings](../../media/Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-cosmodb-settings.png)
 
 ### Validating Synapse Link for Cosmos DB
 
@@ -79,14 +79,14 @@ Let's double-check and verify if Cosmos DB Analytical store and containers are c
 
 1. Navigate to 'Data' section in the left panel and then to the 'Linked' menu option.
 2. Expand 'Azure CosmosDB', There will be five containers listed with 'Analytical Store' enabled.
-![synapse-studio-data-link-cosmodb-containers](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-data-link-cosmodb-containers.png)
+![synapse-studio-data-link-cosmodb-containers](../../media/Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-data-link-cosmodb-containers.png)
 
 ## Configuring linked services for Azure Key Vault
 
 1. In Synapse Studio click on the 'Manage' icon in the left panel and navigate to 'Linked Services' menu option and click '*+New*'.
-![synapse-studio-linked-service](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services.png)
+![synapse-studio-linked-service](../../media/Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services.png)
 2. Choose "Azure Key Vault" click '*Continue*' to open up configuration settings.
-![](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-key-vault.png)
+![](../../media/Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-key-vault.png)
 3. Name: **AzureKeyVault**
 4. Account selection method: **From Azure Subscription**
    1. Azure Subscription: **Use your subscription**
@@ -95,7 +95,7 @@ Let's double-check and verify if Cosmos DB Analytical store and containers are c
 6. Click Test connection
 7. Click '*Create*' to save the changes.
 
-![synapse-studio-linked-service](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-key-vault-settings.png)
+![synapse-studio-linked-service](../../media/Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-key-vault-settings.png)
 
 ## Configuring linked services for Azure Cognitive Service
 
@@ -111,10 +111,10 @@ There are a few prerequisites before [configuring a linked services for Azure Co
 It's time to configure secrets and access.
 
 1. In Azure Key Vault click on the 'Access Police' in the left panel and grant the Azure Synapse workspace MSI permission to read secrets from Azure Key Vault.
-    ![azure-portal-key-vault-access-police](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/azure-portal-key-vault-access-polices.png)
+    ![azure-portal-key-vault-access-police](../../media/Synapse%20Link%20for%20Cosmos%20DB/azure-portal-key-vault-access-polices.png)
 2. Configure from template: Key Secret & Certificate Management
 3. Select principal: synapse-link-*suffix*
-    ![azure-portal-key-vault-access-polices-select-principal](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/azure-portal-key-vault-access-polices-select-principal.png)
+    ![azure-portal-key-vault-access-polices-select-principal](../../media/Synapse%20Link%20for%20Cosmos%20DB/azure-portal-key-vault-access-polices-select-principal.png)
 4. Click "*Select*" and then "*Add*"
 5. Click "Save"
 6. Go to your Cognitive Services Anomaly Detector resource, in the left panel click *Keys and Endpoint*.
@@ -126,12 +126,12 @@ It's time to configure secrets and access.
 12. Value: **paste the key from the step 7**
 13. Click *Create*
 
-![azure-portal-key-vault-secret-anomaly-detector](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/azure-portal-key-vault-secret-anomaly-detector.png)
+![azure-portal-key-vault-secret-anomaly-detector](../../media/Synapse%20Link%20for%20Cosmos%20DB/azure-portal-key-vault-secret-anomaly-detector.png)
 
 ### Finally, lets create an Azure Cognitive Service linked service
 
 1. In Synapse Studio click on the 'Manage' icon in the left panel and navigate to 'Linked Services' menu option and click '*+New*'.
-![synapse-studio-linked-services-cognitive-service](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-cognitive-service.png)
+![synapse-studio-linked-services-cognitive-service](../../media/Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-cognitive-service.png)
 2. Choose "Azure Cognitive Services" click '*Continue*' to open up configuration settings.
 3. Name: **CongitiveServicesLink**
 4. Connect via IR: **AutoResoveIntegrationRuntime**
@@ -143,7 +143,7 @@ It's time to configure secrets and access.
    4. Secret name: **AnomalyDetectorKey**
    5. Secret version: **Latest version**
 7. Click '*Create*' to save the changes
-![synapse-studio-linked-services-cognitive-service-settings.png](../../media/Lab%20Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-cognitive-service-settings.png)
+![synapse-studio-linked-services-cognitive-service-settings.png](../../media/Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-cognitive-service-settings.png)
 
 > [!TIP]
 > Do not forget to Publish All

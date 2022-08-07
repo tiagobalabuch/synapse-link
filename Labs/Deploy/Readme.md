@@ -26,12 +26,12 @@ There will be a few resources to support an Azure Synapse link for CosmosDB:
   - Ingest batch data into CosmosDB containers
   - Fetch data from CosmosDB
   - Join dataset together
-  - Perform Sales Forecasting using Azure Synapse Link and Azure Machine Learning
+  - Perform Sales forecasting using Azure Synapse Link and Azure Machine Learning
 - PySpark Notebook to:
   - Ingest stream and batch data into CosmosDB containers
   - Fetch data from CosmosDB
   - Join dataset together
-  - Perform Anomaly Detection using Azure Synapse Link and Azure Cognitive Services on Synapse Spark Pool (MMLSpark)
+  - Perform Anomaly Detection using Azure Synapse Link and Azure Cognitive Services on SynapseML
 
 ## Azure services provisioned for the workshop
 
@@ -51,7 +51,7 @@ Some of the Azure services provisioned require globally unique name and a “-su
 | 6     |Azure Key Vault|  key-vault-*suffix* | Standard |[Create an Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/quick-create-portal)|
 | 7 | Log Analytics Workspace | log-analytics-*suffix*| | [Create a Log Analytics workspace](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/quick-create-workspace?tabs=azure-portal)|
 | 7 | Application Insights | application-insights-*suffix*||[Create an Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/create-new-resource)
-| 7| Azure Machine Learning |aml-workspace-*suffix*  | a |[Create as Azure Machine Learning Workspace](https://docs.microsoft.com/en-us/azure/machine-learning/quickstart-create-resources)|
+| 7| Azure Machine Learning |aml-workspace-*suffix*  |  |[Create as Azure Machine Learning Workspace](https://docs.microsoft.com/en-us/azure/machine-learning/quickstart-create-resources)|
 
 ### Azure Machine Learning deployment
 
@@ -134,12 +134,12 @@ Now, you have to grant permission for Azure Synapse Analytics workspace to acces
 
 1. Open your Azure Machine Learning resource
 2. Navigate to 'Access control (IAM)' section in the left panel and then click '*+ Add*'.
-![azure-ml-IAM](../../media/azure-ml-IAM.png)
+![azure-ml-IAM](../../media/deploy/azure-ml-IAM.png)
 3. Select '*Add role assignment*'
 4. Select '*Contributor*' role anc click '*Next*'
-![azure-ml-IAM-role](../../media/azure-ml-IAM-role.png)
+![azure-ml-IAM-role](../../media/deploy/azure-ml-IAM-role.png)
 5. Select '*+ Select members*' and find out the Azure Synapse Analytics Workspace (synapse-link-*suffix*) you created previously.
-![azure-ml-IAM-member](../../media/azure-ml-IAM-member.png)
+![azure-ml-IAM-member](../../media/deploy/azure-ml-IAM-member.png)
 6. Click '*Review + assign*'
 
 > [!IMPORTANT]
