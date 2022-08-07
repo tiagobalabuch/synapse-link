@@ -10,6 +10,8 @@ In the exercises in this lab you will build a end to end scenarios using sample 
 
 **Keep in mind**
 
+Assume you have the right permission to create azure resouces and synapse objects
+
 # Rever esses bullets points
 
 - The reference architecture proposed in this workshop aims to explain just enough of the role of each of the Azure Data Services included in the overall modern data platform architecture. This workshop does not replace the need of in-depth training on each Azure service covered.

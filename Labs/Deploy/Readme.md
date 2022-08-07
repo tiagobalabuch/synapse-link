@@ -107,9 +107,9 @@ Synapse Link creates a tight seamless integration between Azure Cosmos DB and Az
 Apache Spark is a parallel processing framework that supports in-memory processing to boost the performance of big data analytic applications and
 An Apache Spark pool provides open-source big data compute capabilities.
 
-1. Start creating a Apache Spark pool into you Azure Synapse Analytics workspace. [Create a new serverless Apache Spark pool](https://docs.microsoft.com/en-us/azure/synapse-analytics/quickstart-create-apache-spark-pool-portal).
+1. Start creating two Apache Spark pool into you Azure Synapse Analytics workspace. [Create a new serverless Apache Spark pool](https://docs.microsoft.com/en-us/azure/synapse-analytics/quickstart-create-apache-spark-pool-portal).
 
-- **Apache Spark pool name**: demo
+- **Apache Spark pool name**: demoaml
 - **Node size family**: Memory Optimized
 - **Node size**: Medium (8 vCores / 64 GB)
 - **Autoscale**: Enable
@@ -117,6 +117,14 @@ An Apache Spark pool provides open-source big data compute capabilities.
 - **Apache Spark**: 2.4
 
 Unfortunately, Spark 2.4 is a prerequisite from [train a machine learning model](https://docs.microsoft.com/en-us/azure/synapse-analytics/machine-learning/tutorial-automl#prerequisites)
+
+
+- **Apache Spark pool name**: demo
+- **Node size family**: Memory Optimized
+- **Node size**: Medium (8 vCores / 64 GB)
+- **Autoscale**: Enable
+- **Automatic pausing**: Enable
+- **Apache Spark**: 3.2
 
 ### Granting permission for Azure Synapse Analytics
 
