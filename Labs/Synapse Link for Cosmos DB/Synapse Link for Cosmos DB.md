@@ -23,11 +23,13 @@ You will configure the Azure environment to allow data to be transferred from an
 
 ![cosmosdb-reference-architecture](../../media/Synapse%20Link%20for%20Cosmos%20DB/cosmosdb-reference-architecture.png)
 
-- STEP 1 - [Configuring linked services for Azure ML](Synapse%20Link%20for%20Cosmos%20DB.md#Configuring-linked-services-for-Azure-ML)
-- STEP 1 - Configuring Synapse Link for CosmosDB
-- STEP 2 - Navigating through Cosmos DB using Synapse Link
-- STEP  -  Exploring data using Apache Spark Pool
-- STEP  - Exploring data using SQL Serverless Pool
+- Step 1 - [Configuring linked services for Azure ML](Synapse%20Link%20for%20Cosmos%20DB.md#Configuring-linked-services-for-Azure-ML)
+- Step 2 - [Configuring Synapse Link for CosmosDB](Synapse%20Link%20for%20Cosmos%20DB.md#Configuring-Synapse-Link-for-CosmosDB)
+- Step 3 - [Validating Synapse Link for Cosmos DB](Synapse%20Link%20for%20Cosmos%20DB.md#Validating-Synapse-Link-for-Cosmos-DB)
+- Step 4 - [Configuring linked services for Azure Key Vault](Synapse%20Link%20for%20Cosmos%20DB.md#Configuring-linked-services-for-Azure-Key-Vault)
+- Step 5 - [Configuring linked services for Azure Cognitive Service](Synapse%20Link%20for%20Cosmos%20DB.md#Configuring-linked-services-for-Azure-Cognitive-Service)
+- Step 6 - [Creating an Azure Cognitive Service linked service](Synapse%20Link%20for%20Cosmos%20DB.md#Creating-an-Azure-Cognitive-Service-linked-service)
+- STEP 7 -  [Exploring data with Notebooks using Synapse Spark Pool](Synapse%20Link%20for%20Cosmos%20DB.md#Exploring-data-with-Notebooks-using-Synapse-Spark-Pool)
 
 ## Configuring linked services for Azure ML
 
@@ -128,7 +130,9 @@ It's time to configure secrets and access.
 
 ![azure-portal-key-vault-secret-anomaly-detector](../../media/Synapse%20Link%20for%20Cosmos%20DB/azure-portal-key-vault-secret-anomaly-detector.png)
 
-### Finally, lets create an Azure Cognitive Service linked service
+### Creating an Azure Cognitive Service linked service
+
+Finally, lets create an Azure Cognitive Service linked service
 
 1. In Synapse Studio click on the 'Manage' icon in the left panel and navigate to 'Linked Services' menu option and click '*+New*'.
 ![synapse-studio-linked-services-cognitive-service](../../media/Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-cognitive-service.png)
@@ -148,7 +152,7 @@ It's time to configure secrets and access.
 > [!TIP]
 > Do not forget to Publish All
 
-### Notebooks
+### Exploring data with Notebooks using Synapse Spark Pool
 
 Notebooks contain both computer code (e.g. python) and rich text elements (paragraph, equations, figures, links, etc…). Notebooks are both human-readable documents containing the analysis description and the results (figures, tables, etc..) as well as executable documents which can be run to perform data analysis.
 They are an essential tool for data, prototyping, and learning!
@@ -172,7 +176,7 @@ With Synapse Link, you can now directly connect to your Azure Cosmos DB containe
 
 Let's start with the first notebook - Sales forecasting with Auto ML
 
-#### Sales forecasting with Auto ML
+### Sales forecasting with Auto ML
 
 This notebook will cover:
 
