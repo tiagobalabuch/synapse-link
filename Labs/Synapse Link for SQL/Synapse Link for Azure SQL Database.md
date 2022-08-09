@@ -70,3 +70,26 @@ This [documentation](/azure/synapse-analytics/synapse-link/connect-synapse-link-
    1. Set admin: **use your identity** (e.g. tiagobalabuch@mycompany.com)
    2. [Provision Azure Ad Admin Azure SQL Database](https://docs.microsoft.com/en-us/azure/azure-sql/database/authentication-aad-configure?view=azuresql&tabs=azure-powershell#provision-azure-ad-admin-sql-database)
    ![azure-sql-db-ad-admin-settings](../../media/Synapse%20Link%20for%20Azure%20SQL%20DB/azure-sql-db-ad-admin-settings.png)
+
+3. In the left panel, navigate to **SQL databases**
+4. Click "**RetailDB**"
+5. Navigate to Query editor (preview)
+6. Connect using Active Directory authentication
+   1. We are going to have our Synapse workspace connect to our Azure SQL Database using a managed identity. That is reason why we have set the Azure Active Directory admin on Azure SQL Server
+7. Run the following script to provide the managed identity permission to the source database.
+
+```sql
+CREATE USER <workspace name> FROM EXTERNAL PROVIDER;
+ALTER ROLE [db_owner] ADD MEMBER <workspace name>;
+```
+
+8. Replace <workspace name> for your workspace **synapse-link-*suffix***
+
+```sql
+CREATE USER [synapse-link-balabuch] FROM EXTERNAL PROVIDER;
+ALTER ROLE [db_owner] ADD MEMBER [synapse-link-balabuch];
+```
+
+### Create your target Synapse SQL pool
+
+During our deployment an Azure Synapse SQL Dedicated Pool was created. But if you haven't done it, follow this [steps](../Deploy/Readme.md#Create-a-Dedicated-SQL-pool).

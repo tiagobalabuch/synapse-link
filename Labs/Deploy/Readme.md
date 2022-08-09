@@ -53,6 +53,7 @@ Some of the Azure services provisioned require globally unique name and a “-su
 | 7 | Application Insights | application-insights-*suffix*||[Create an Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/create-new-resource)
 | 7 | Azure Machine Learning |aml-workspace-*suffix*  |  |[Create as Azure Machine Learning Workspace](https://docs.microsoft.com/en-us/azure/machine-learning/quickstart-create-resources)|
 | 8 | Azure SQL Database | sql-link-*suffix* | S3 100 DTU |  [Create a single database - Azure SQL Database](https://docs.microsoft.com/en-us/azure/azure-sql/database/single-database-create-quickstart?view=azuresql&tabs=azure-portal)
+| 9 | Azure Synapse Analytics Dedicated SQL Pool  | DW | DW100c |[Create a dedicated SQL pool using Synapse Studio](https://docs.microsoft.com/en-us/azure/synapse-analytics/quickstart-create-sql-pool-studio)|
 
 ### Azure Machine Learning deployment
 
@@ -125,6 +126,20 @@ Unfortunately, Spark 2.4 is a prerequisite from [train a machine learning model]
 - **Autoscale**: Enable
 - **Automatic pausing**: Enable
 - **Apache Spark**: 3.2
+
+### Create a Dedicated SQL pool
+
+ A dedicated SQL pool offers T-SQL based compute and storage capabilities.
+
+1. Start creating a Dedicated SQL pool into you Azure Synapse Analytics workspace. [Create a dedicated SQL pool using Synapse Studio](https://docs.microsoft.com/en-us/azure/synapse-analytics/quickstart-create-sql-pool-studio).
+
+- Dedicated SQL pool name: **DW**
+- Performance level: **DW100c**
+
+> [!WARNING]
+> Immediately after you deploy a Dedicated Pool, you must pause it to save money. We will only use it later.
+
+[Pause and resume compute in dedicated SQL pool via the Azure portal](https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/pause-and-resume-compute-portal)
 
 ### Granting permission for Azure Synapse Analytics
 
