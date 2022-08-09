@@ -51,7 +51,8 @@ Some of the Azure services provisioned require globally unique name and a “-su
 | 6     |Azure Key Vault|  key-vault-*suffix* | Standard |[Create an Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/quick-create-portal)|
 | 7 | Log Analytics Workspace | log-analytics-*suffix*| | [Create a Log Analytics workspace](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/quick-create-workspace?tabs=azure-portal)|
 | 7 | Application Insights | application-insights-*suffix*||[Create an Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/create-new-resource)
-| 7| Azure Machine Learning |aml-workspace-*suffix*  |  |[Create as Azure Machine Learning Workspace](https://docs.microsoft.com/en-us/azure/machine-learning/quickstart-create-resources)|
+| 7 | Azure Machine Learning |aml-workspace-*suffix*  |  |[Create as Azure Machine Learning Workspace](https://docs.microsoft.com/en-us/azure/machine-learning/quickstart-create-resources)|
+| 8 | Azure SQL Database | sql-link-*suffix* | [Create a single database - Azure SQL Database](https://docs.microsoft.com/en-us/azure/azure-sql/database/single-database-create-quickstart?view=azuresql&tabs=azure-portal)
 
 ### Azure Machine Learning deployment
 
@@ -100,7 +101,7 @@ Synapse Link creates a tight seamless integration between Azure Cosmos DB and Az
 >
 > Keep in mind that in all container you must enable analytical store
 
-![](../../media/cosmosdb-database-containers.png)
+![cosmosdb-database-container](../../media/cosmosdb-database-containers.png)
 
 ### Create a Spark pool
 
@@ -117,7 +118,6 @@ An Apache Spark pool provides open-source big data compute capabilities.
 - **Apache Spark**: 2.4
 
 Unfortunately, Spark 2.4 is a prerequisite from [train a machine learning model](https://docs.microsoft.com/en-us/azure/synapse-analytics/machine-learning/tutorial-automl#prerequisites)
-
 
 - **Apache Spark pool name**: demo
 - **Node size family**: Memory Optimized
@@ -144,6 +144,22 @@ Now, you have to grant permission for Azure Synapse Analytics workspace to acces
 
 > [!IMPORTANT]
 > We will create a linked services during the lab.
+
+## Deploying an Azure logical SQL Server
+In Azure SQL Database a [server is a logical](https://docs.microsoft.com/en-us/azure/azure-sql/database/logical-servers?view=azuresql&tabs=portal#create-a-blank-server) construct that acts as a central administrative point for a collection of databases. At the server level, you can administer logins, firewall rules, auditing rules, threat detection policies, and auto-failover groups.
+
+We have to first create a logical SQL server
+
+1. In Azure Portal click '*+ Create a resource*'. In the left panel click "Database"
+2. Then click SQL server (logical server)
+3. ![azure-logical-sql-server-menu](../../media/Deploy/azure-logical-sql-server-menu.png)
+4. Resource group: **synapse-link**
+5. Server name: **sql-link-*suffix***
+6. Location: **choose the nearest location for you**
+7. Authentication method: **Use SQL authentication**
+8. Server admin login: **sqladmin**
+9. Password: **"WhatEver@Iwant123456"**
+10. ![](../../media/Deploy/azure-logical-sql-server-basic-settings.png)
 
 ## One click deploy
 

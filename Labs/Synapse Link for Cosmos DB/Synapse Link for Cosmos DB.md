@@ -29,7 +29,7 @@ You will configure the Azure environment to allow data to be transferred from an
 - Step 4 - [Configuring linked services for Azure Key Vault](Synapse%20Link%20for%20Cosmos%20DB.md#Configuring-linked-services-for-Azure-Key-Vault)
 - Step 5 - [Configuring linked services for Azure Cognitive Service](Synapse%20Link%20for%20Cosmos%20DB.md#Configuring-linked-services-for-Azure-Cognitive-Service)
 - Step 6 - [Creating an Azure Cognitive Service linked service](Synapse%20Link%20for%20Cosmos%20DB.md#Creating-an-Azure-Cognitive-Service-linked-service)
-- STEP 7 -  [Exploring data with Notebooks using Synapse Spark Pool](Synapse%20Link%20for%20Cosmos%20DB.md#Exploring-data-with-Notebooks-using-Synapse-Spark-Pool)
+- Step 7 -  [Exploring data with Notebooks using Synapse Spark Pool](Synapse%20Link%20for%20Cosmos%20DB.md#Exploring-data-with-Notebooks-using-Synapse-Spark-Pool)
 
 ## Configuring linked services for Azure ML
 
@@ -68,7 +68,7 @@ You will configure the Azure environment to allow data to be transferred from an
 
 ![synapse-studio-linked-services-cosmodb-settings](../../media/Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-cosmodb-settings.png)
 
-### Validating Synapse Link for Cosmos DB
+## Validating Synapse Link for Cosmos DB
 
 Let's double-check and verify if Cosmos DB Analytical store and containers are correctly setting up.
 
@@ -130,7 +130,7 @@ It's time to configure secrets and access.
 
 ![azure-portal-key-vault-secret-anomaly-detector](../../media/Synapse%20Link%20for%20Cosmos%20DB/azure-portal-key-vault-secret-anomaly-detector.png)
 
-### Creating an Azure Cognitive Service linked service
+## Creating an Azure Cognitive Service linked service
 
 Finally, lets create an Azure Cognitive Service linked service
 
@@ -152,17 +152,20 @@ Finally, lets create an Azure Cognitive Service linked service
 > [!TIP]
 > Do not forget to Publish All
 
-### Exploring data with Notebooks using Synapse Spark Pool
+## Exploring data with Notebooks using Synapse Spark Pool
 
 Notebooks contain both computer code (e.g. python) and rich text elements (paragraph, equations, figures, links, etc…). Notebooks are both human-readable documents containing the analysis description and the results (figures, tables, etc..) as well as executable documents which can be run to perform data analysis.
 They are an essential tool for data, prototyping, and learning!
 
-[Create, develop, and maintain Synapse notebooks in Azure Synapse Analytics](https://docs.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-development-using-notebooks)
 
 There are two notebooks to you explore and learn:
 
 - **Sales forecasting with Auto ML**
 - **IoT Anomaly Detection with Synapse ML**
+
+Create a new folder named "Cosmos DB" and import these notebooks.
+
+[Create, develop, and maintain Synapse notebooks in Azure Synapse Analytics](https://docs.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-development-using-notebooks)
 
 First lets [import](https://docs.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-development-using-notebooks#create-a-notebook)  these notebooks into the Azure Synapse Analytics workspace.
 
