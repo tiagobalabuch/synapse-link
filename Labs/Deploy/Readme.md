@@ -52,7 +52,7 @@ Some of the Azure services provisioned require globally unique name and a “-su
 | 7 | Log Analytics Workspace | log-analytics-*suffix*| | [Create a Log Analytics workspace](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/quick-create-workspace?tabs=azure-portal)|
 | 7 | Application Insights | application-insights-*suffix*||[Create an Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/create-new-resource)
 | 7 | Azure Machine Learning |aml-workspace-*suffix*  |  |[Create as Azure Machine Learning Workspace](https://docs.microsoft.com/en-us/azure/machine-learning/quickstart-create-resources)|
-| 8 | Azure SQL Database | sql-link-*suffix* | [Create a single database - Azure SQL Database](https://docs.microsoft.com/en-us/azure/azure-sql/database/single-database-create-quickstart?view=azuresql&tabs=azure-portal)
+| 8 | Azure SQL Database | sql-link-*suffix* | S3 100 DTU |  [Create a single database - Azure SQL Database](https://docs.microsoft.com/en-us/azure/azure-sql/database/single-database-create-quickstart?view=azuresql&tabs=azure-portal)
 
 ### Azure Machine Learning deployment
 
@@ -146,20 +146,41 @@ Now, you have to grant permission for Azure Synapse Analytics workspace to acces
 > We will create a linked services during the lab.
 
 ## Deploying an Azure logical SQL Server
+
 In Azure SQL Database a [server is a logical](https://docs.microsoft.com/en-us/azure/azure-sql/database/logical-servers?view=azuresql&tabs=portal#create-a-blank-server) construct that acts as a central administrative point for a collection of databases. At the server level, you can administer logins, firewall rules, auditing rules, threat detection policies, and auto-failover groups.
 
 We have to first create a logical SQL server
 
 1. In Azure Portal click '*+ Create a resource*'. In the left panel click "Database"
 2. Then click SQL server (logical server)
-3. ![azure-logical-sql-server-menu](../../media/Deploy/azure-logical-sql-server-menu.png)
-4. Resource group: **synapse-link**
-5. Server name: **sql-link-*suffix***
-6. Location: **choose the nearest location for you**
-7. Authentication method: **Use SQL authentication**
-8. Server admin login: **sqladmin**
-9. Password: **"WhatEver@Iwant123456"**
-10. ![](../../media/Deploy/azure-logical-sql-server-basic-settings.png)
+   ![azure-logical-sql-server-menu](../../media/Deploy/azure-logical-sql-server-menu.png)
+3. Resource group: **synapse-link**
+4. Server name: **sql-link-*suffix***
+5. Location: **choose the nearest location for you**
+6. Authentication method: **Use SQL authentication**
+7. Server admin login: **sqladmin**
+8. Password: **"WhatEver@Iwant123456"**
+![azure-logical-sql-server-basic-settings](../../media/Deploy/azure-logical-sql-server-basic-settings.png)
+9. Networking
+    1. Allow Azure services and resources to access this server: **Yes**
+
+10. Click "*Review + create*" and then "*Create*"
+
+Once the deployment is finished, it's time to import our database. We are going to use a BACPAC file to load our data.
+
+> [!WARNING]
+> Make sure you follow the instruction bellow, otherwise you won't be able to continue.
+
+Download the RetailDB BACPAC file [here](https://synapselinkdemoworkshop.blob.core.windows.net/synapse-link/sql/RetailDB.bacpac).
+
+Follow the instruction to [import a BACPAC file to a database in Azure SQL Database](https://docs.microsoft.com/en-us/azure/azure-sql/database/database-import?view=azuresql&tabs=azure-powershell)
+
+- Upload the file to your storage account **synapsedatalake*suffix***
+- Pricing Tier: **Standard S3**
+- Database name: **RetailDB**
+- Authentication type: **SQL Server**
+- Server admin login: **sqladmin**
+- Password: **"WhatEver@Iwant123456"**
 
 ## One click deploy
 

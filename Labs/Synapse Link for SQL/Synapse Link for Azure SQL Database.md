@@ -22,7 +22,7 @@ You will configure the Azure environment to allow data to be transferred from an
 
 # Lab architecture
 
-![cosmosdb-reference-architecture](../../media/Synapse%20Link%20for%20Azure%20SQL%20DB/azuresqldb-reference-architecture.png)
+![azuresqldb-reference-architecture](../../media/Synapse%20Link%20for%20Azure%20SQL%20DB/azuresqldb-reference-architecture.png)
 
 - Step 1 - [Configuring linked services for Azure ML](Synapse%20Link%20for%20Cosmos%20DB.md#Configuring-linked-services-for-Azure-ML)
 - Step 2 - [Configuring Synapse Link for CosmosDB](Synapse%20Link%20for%20Cosmos%20DB.md#Configuring-Synapse-Link-for-CosmosDB)
@@ -31,3 +31,42 @@ You will configure the Azure environment to allow data to be transferred from an
 - Step 5 - [Configuring linked services for Azure Cognitive Service](Synapse%20Link%20for%20Cosmos%20DB.md#Configuring-linked-services-for-Azure-Cognitive-Service)
 - Step 6 - [Creating an Azure Cognitive Service linked service](Synapse%20Link%20for%20Cosmos%20DB.md#Creating-an-Azure-Cognitive-Service-linked-service)
 - Step 7 -  [Exploring data with Notebooks using Synapse Spark Pool](Synapse%20Link%20for%20Cosmos%20DB.md#Exploring-data-with-Notebooks-using-Synapse-Spark-Pool)
+
+## Configuring linked services for Azure ML
+
+[Create an Azure ML linked service](https://docs.microsoft.com/en-us/azure/synapse-analytics/machine-learning/quickstart-integrate-azure-machine-learning#create-an-azure-ml-linked-service)
+
+1. In Synapse Studio click on the 'Manage' icon in the left panel and navigate to 'Linked Services' menu option and click '*+New*'.
+![synapse-studio-linked-service](../../media/Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services.png)
+2. Choose "Azure Machine Learning" click '*Continue*' to open up configuration settings.
+![synapse-studio-linked-services-aml](../../media/Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-aml.png)
+3. Name: **AzureMLServices**
+4. Connect via IR: **AutoResoveIntegrationRuntime**
+5. Authentication type: **System Assigned Managed Identity**
+6. Account selection method: **From Azure Subscription**
+   1. Azure Subscription: **Use your subscription**
+   2. Azure Machine Learning workspace name: **aml-workspace-*suffix***
+7. Click Test connection
+8. Click '*Create*' to save the changes.
+
+![synapse-studio-linked-service](../../media/Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-aml-settings.png)
+
+## Configuring Synapse Link for Azure SQL Database
+
+Before going straight to the point, there are a few steps you have to complete.
+This [documentation](/azure/synapse-analytics/synapse-link/connect-synapse-link-sql-database) explain all these steps but you can follow here as we will walk through them.
+
+> [!IMPORTANT]
+> Make sure you have deploy the Azure SQL Database before moving forward. Review the deploy instructions.
+
+### Configure your source Azure SQL Database
+
+1. Go to Azure portal, navigate to your Azure SQL Server
+   1. Select Identity
+   2. Then set System assigned managed identity to **On**
+   ![azure-sql-db-identity-settings](../../media/Synapse%20Link%20for%20Azure%20SQL%20DB/azure-sql-db-identity-settings.png)
+
+2. Navigate to **Azure Active Directory**
+   1. Set admin: **use your identity** (e.g. tiagobalabuch@mycompany.com)
+   2. [Provision Azure Ad Admin Azure SQL Database](https://docs.microsoft.com/en-us/azure/azure-sql/database/authentication-aad-configure?view=azuresql&tabs=azure-powershell#provision-azure-ad-admin-sql-database)
+   ![azure-sql-db-ad-admin-settings](../../media/Synapse%20Link%20for%20Azure%20SQL%20DB/azure-sql-db-ad-admin-settings.png)
