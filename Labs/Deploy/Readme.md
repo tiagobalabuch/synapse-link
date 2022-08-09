@@ -102,7 +102,7 @@ Synapse Link creates a tight seamless integration between Azure Cosmos DB and Az
 >
 > Keep in mind that in all container you must enable analytical store
 
-![cosmosdb-database-container](../../media/deploy/cosmosdb-database-containers.png)
+![cosmosdb-database-container](../../media/Deploy/cosmosdb-database-containers.png)
 
 ### Create a Spark pool
 
@@ -149,12 +149,12 @@ Now, you have to grant permission for Azure Synapse Analytics workspace to acces
 
 1. Open your Azure Machine Learning resource
 2. Navigate to 'Access control (IAM)' section in the left panel and then click '*+ Add*'.
-![azure-ml-IAM](../../media/deploy/azure-ml-IAM.png)
+![azure-ml-IAM](../../media/Deploy/azure-ml-IAM.png)
 3. Select '*Add role assignment*'
 4. Select '*Contributor*' role anc click '*Next*'
-![azure-ml-IAM-role](../../media/deploy/azure-ml-IAM-role.png)
+![azure-ml-IAM-role](../../media/Deploy/azure-ml-IAM-role.png)
 5. Select '*+ Select members*' and find out the Azure Synapse Analytics Workspace (synapse-link-*suffix*) you created previously.
-![azure-ml-IAM-member](../../media/deploy/azure-ml-IAM-member.png)
+![azure-ml-IAM-member](../../media/Deploy/azure-ml-IAM-member.png)
 6. Click '*Review + assign*'
 
 > [!IMPORTANT]
