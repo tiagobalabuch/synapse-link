@@ -102,7 +102,7 @@ Synapse Link creates a tight seamless integration between Azure Cosmos DB and Az
 >
 > Keep in mind that in all container you must enable analytical store
 
-![cosmosdb-database-container](../../media/cosmosdb-database-containers.png)
+![cosmosdb-database-container](../../media/deploy/cosmosdb-database-containers.png)
 
 ### Create a Spark pool
 

@@ -92,4 +92,4 @@ ALTER ROLE [db_owner] ADD MEMBER [synapse-link-balabuch];
 
 ### Create your target Synapse SQL pool
 
-During our deployment an Azure Synapse SQL Dedicated Pool was created. But if you haven't done it, follow this [steps](../Deploy/Readme.md#Create-a-Dedicated-SQL-pool).
+During our deployment an Azure Synapse SQL Dedicated Pool was created. But if you haven't done it, follow this [steps](../Deploy/Readme.md#create-a-dedicated-sql-pool).
