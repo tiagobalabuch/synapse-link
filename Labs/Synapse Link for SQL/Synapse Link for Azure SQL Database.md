@@ -54,7 +54,7 @@ You will configure the Azure environment to allow data to be transferred from an
 ## Configuring Synapse Link for Azure SQL Database
 
 Before going straight to the point, there are a few steps you have to complete.
-This [documentation](/azure/synapse-analytics/synapse-link/connect-synapse-link-sql-database) explain all these steps but you can follow here as we will walk through them.
+This [documentation](https://docs.microsoft.com/en-us/azure/synapse-analytics/synapse-link/connect-synapse-link-sql-database) explain all these steps but you can follow here as we will walk through them.
 
 > [!IMPORTANT]
 > Make sure you have deploy the Azure SQL Database before moving forward. Review the deploy instructions.
@@ -93,3 +93,50 @@ ALTER ROLE [db_owner] ADD MEMBER [synapse-link-balabuch];
 ### Create your target Synapse SQL pool
 
 During our deployment an Azure Synapse SQL Dedicated Pool was created. But if you haven't done it, follow this [steps](../Deploy/Readme.md#create-a-dedicated-sql-pool).
+
+## Create an Azure SQL Database linked service
+
+1. In Synapse Studio click on the 'Manage' icon in the left panel and navigate to 'Linked Services' menu option and click '*+New*'.
+![synapse-studio-linked-service](../../media/Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services.png)
+2. Choose Azure SQL Database and click '*Continue*' to open up configuration settings.
+ ![synapse-studio-link-choose-sql-db](../../media/Synapse%20Link%20for%20Azure%20SQL%20DB/synapse-studio-link-choose-sql-db.png)
+3. Name: **AzureSQLDBLink**
+4. Connect via IR: **AutoResoveIntegrationRuntime**
+5. Account selection method: **From Azure Subscription**
+   1. Azure Subscription: **Use your subscription**
+   2. Server name: **sql-link-*suffix***
+   3. Database Name: **RetailDB**
+6. Authentication type: **System Assigned Managed Identity**
+7. Click Test connection
+8. Click '*Create*' to save the changes
+![](../../media/Synapse%20Link%20for%20Azure%20SQL%20DB/synapse-studio-create-link-sql-db-settings.png)
+
+> [!TIP]
+> Pay attention on Managed identity name. This is the name you should have used when you were configuring your source Azure SQL Database.
+
+## Create the Azure Synapse Link connection
+
+It's time to really create our link between Azure SQL Database and Azure Synapse Analytics.
+
+1. In Synapse Studio click on the 'Integrate' icon in the left panel and navigate to '*+ Link connection(Preview)*'.
+![synapse-studio-create-link-sql-db](../../media/Synapse%20Link%20for%20Azure%20SQL%20DB/synapse-studio-create-link-sql-db.png)
+
+2. Source type: **Azure SQL database**
+3. Source linked service: **AzureSQLDBLink**
+4. Source tables: **select all**
+   ![synapse-studio-create-link-sql-db-settings-source](../../media/Synapse%20Link%20for%20Azure%20SQL%20DB/synapse-studio-create-link-sql-db-settings-source.png)
+5. Click '*Continue*'
+6. Target pool: **DW**
+   ![synapse-studio-create-link-sql-db-settings-target.](../../media/Synapse%20Link%20for%20Azure%20SQL%20DB/synapse-studio-create-link-sql-db-settings-target.png)
+7. Click '*Continue*'
+8. Link connection name: **link-to-azure-sql-db**
+9. Core count: **2 (+ 2 Driver cores)**
+10. Mode: **Continuous**
+    ![synapse-studio-create-link-sql-db-settings-connection](../../media/Synapse%20Link%20for%20Azure%20SQL%20DB/synapse-studio-create-link-sql-db-settings-connection.png)
+11. Click '*OK*'
+12. Review all the information
+13. Change th structure type of your tables to **HEAP**
+14. Select Publish all to save the new link connection to the service.
+    ![synapse-studio-create-link-sql-db-final](../../media/Synapse%20Link%20for%20Azure%20SQL%20DB/synapse-studio-create-link-sql-db-final.png)
+15. Then click *Start*
+16. Wait a few minutes for the data to be replicated.
