@@ -141,7 +141,7 @@ It's time to really create our link between Azure SQL Database and Azure Synapse
 15. Then click *Start*
 16. Wait a few minutes for the data to be replicated.
 17. Once you linked started you can click 'Develop' icon in the left panel and click '+ SQL Script'
-18. Run a select to get data from a table.
+18. Run the following statement to get data from a table.
 
 ```sql
 SELECT [id]
