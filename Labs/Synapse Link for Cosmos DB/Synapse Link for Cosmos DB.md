@@ -147,6 +147,7 @@ Finally, lets create an Azure Cognitive Service linked service
    4. Secret name: **AnomalyDetectorKey**
    5. Secret version: **Latest version**
 7. Click '*Create*' to save the changes
+
 ![synapse-studio-linked-services-cognitive-service-settings.png](../../media/Synapse%20Link%20for%20Cosmos%20DB/synapse-studio-linked-services-cognitive-service-settings.png)
 
 > [!TIP]
