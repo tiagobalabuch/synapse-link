@@ -210,6 +210,6 @@ You'll see all the resources deployed in the resource group.
 
 [Index: Table of Contents](Index.md)
 
-[Prev: Azure Synapse Link Workshop](Readme.md)
+[Prev: Azure Synapse Link Workshop](../../README.md)
 
-[Next: Lab - Synapse Link for Cosmos DB](../Synapse%20Link%20for%20Cosmos%20DB/Synapse%20Link%20for%20Cosmos%20DB.md)
+[Next: Lab 1 - Azure Synapse Link for Cosmos DB](../Synapse%20Link%20for%20Cosmos%20DB/Synapse%20Link%20for%20Cosmos%20DB.md)

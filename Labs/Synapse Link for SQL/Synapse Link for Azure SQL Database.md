@@ -150,3 +150,11 @@ SELECT [id]
 ,[wholeSaleCost]
  FROM [dbo].[Products]
 ```
+
+## Page Navigator
+
+[Index: Table of Contents](Index.md)
+
+[Prev: Lab 1 - Azure Synapse Link for Cosmos DB](../Synapse%20Link%20for%20Cosmos%20DB/Synapse%20Link%20for%20Cosmos%20DB.md)
+
+[Next - Lab 2 - Azure Synapse Link for Azure SQL Database](Labs/Synapse%20Link%20for%20SQL/Synapse%20Link%20for%20Azure%20SQL%20Database.md)

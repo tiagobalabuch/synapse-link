@@ -201,4 +201,12 @@ This notebook will cover:
 - Perform joins and aggregations across Azure Cosmos DB collections using Azure Synapse Link
 - Perform Anomaly Detection using Azure Synapse Link, Azure Cognitive Services and Synapse ML
 
-_**This notebood uses Spark 3.2**_ - Attach to **demo** Apache Spark Pool
+_**This notebook uses Spark 3.2**_ - Attach to **demo** Apache Spark Pool
+
+## Page Navigator
+
+[Index: Table of Contents](Index.md)
+
+[Prev: Lab 0 - Deploy](../Deploy/Readme.md)
+
+[Next - Lab 2 - Azure Synapse Link for Azure SQL Database](Labs/Synapse%20Link%20for%20SQL/Synapse%20Link%20for%20Azure%20SQL%20Database.md)
