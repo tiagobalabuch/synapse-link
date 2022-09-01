@@ -158,7 +158,6 @@ Finally, lets create an Azure Cognitive Service linked service
 Notebooks contain both computer code (e.g. python) and rich text elements (paragraph, equations, figures, links, etc…). Notebooks are both human-readable documents containing the analysis description and the results (figures, tables, etc..) as well as executable documents which can be run to perform data analysis.
 They are an essential tool for data, prototyping, and learning!
 
-
 There are two notebooks to you explore and learn:
 
 - **Sales forecasting with Auto ML**

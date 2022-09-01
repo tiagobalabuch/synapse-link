@@ -205,3 +205,11 @@ Create ARM Template
 
 After the deployment is complete, click 'Go to resource group'.
 You'll see all the resources deployed in the resource group.
+
+## Page Navigator
+
+[Index: Table of Contents](Index.md)
+
+[Prev: Azure Synapse Link Workshop](Readme.md)
+
+[Next: Lab - Synapse Link for Cosmos DB](../Synapse%20Link%20for%20Cosmos%20DB/Synapse%20Link%20for%20Cosmos%20DB.md)
