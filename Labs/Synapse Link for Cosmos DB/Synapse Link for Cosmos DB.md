@@ -163,11 +163,11 @@ There are two notebooks to you explore and learn:
 - **Sales forecasting with Auto ML**
 - **IoT Anomaly Detection with Synapse ML**
 
-Create a new folder named "Cosmos DB" and import these notebooks.
+Create a new folder named "Azure Cosmos DB" and import these notebooks.
 
 [Create, develop, and maintain Synapse notebooks in Azure Synapse Analytics](https://docs.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-development-using-notebooks)
 
-First lets [import](https://docs.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-development-using-notebooks#create-a-notebook)  these notebooks into the Azure Synapse Analytics workspace.
+First let's [import](https://docs.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-development-using-notebooks#create-a-notebook)  these notebooks into the Azure Synapse Analytics workspace.
 
 > [!TIP]
 > Do not forget to Publish All
@@ -188,7 +188,7 @@ This notebook will cover:
 - Join & aggregate operational data across Cosmos DB containers
 - Perform near real-time Sales forecasting using Azure Automated Machine Learning with Synapse Link for Cosmos DB
 
-_**This notebood uses Spark 2.4**_ - Attach to **demoaml** Apache Spark Pool
+_**This notebook uses Spark 2.4**_ - Attach to **demoaml** Apache Spark Pool
 
 ### IoT Anomaly Detection with Synapse ML
 
@@ -209,4 +209,4 @@ _**This notebook uses Spark 3.2**_ - Attach to **demo** Apache Spark Pool
 
 [Prev: Lab 0 - Deploy](../Deploy/Readme.md)
 
-[Next - Lab 2 - Azure Synapse Link for Azure SQL Database](Labs/Synapse%20Link%20for%20SQL/Synapse%20Link%20for%20Azure%20SQL%20Database.md)
+[Next - Lab 2 - Azure Synapse Link for Azure SQL Database](../Synapse%20Link%20for%20SQL/Synapse%20Link%20for%20Azure%20SQL%20Database.md)

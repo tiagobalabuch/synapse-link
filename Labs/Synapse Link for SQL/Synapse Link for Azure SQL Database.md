@@ -151,6 +151,40 @@ SELECT [id]
  FROM [dbo].[Products]
 ```
 
+
+## Exploring data with Notebooks using Synapse Spark Pool
+
+Notebooks contain both computer code (e.g. python) and rich text elements (paragraph, equations, figures, links, etc…). Notebooks are both human-readable documents containing the analysis description and the results (figures, tables, etc..) as well as executable documents which can be run to perform data analysis.
+They are an essential tool for data, prototyping, and learning!
+
+There is one notebooks to you explore and learn:
+
+- **Sales forecasting with SynapseML**
+
+Create a new folder named "Azure SQL DB" and import this notebook.
+
+[Create, develop, and maintain Synapse notebooks in Azure Synapse Analytics](https://docs.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-development-using-notebooks)
+
+First let's [import](https://docs.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-development-using-notebooks#create-a-notebook)  these notebooks into the Azure Synapse Analytics workspace.
+
+> [!TIP]
+> Do not forget to Publish All
+
+In Synapse Studio click on the 'Develop' icon in the left panel and navigate to the 'Notebooks' section.
+
+In these notebooks we are going to leverage the power of no ELT/ETL with Azure Synapse Link for Azure SQL DB using PySpark.
+
+### Sales forecasting with SynapseML
+
+This notebook will cover:
+
+- Reading data from  Dedicated SQL Pool using Connector for Apache Spark
+  - We are going to read tables that we've just replicated from the Azure SQL DB without performing an ETL/ELT. 
+- Join & aggregate operational data across Dedicated SQL pool tables
+- Perform Sales forecasting using SynapseML
+
+_**This notebook uses Spark 3.2**_ - Attach to **demo** Apache Spark Pool
+
 ## Page Navigator
 
 [Index: Table of Contents](Index.md)

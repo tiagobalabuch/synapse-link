@@ -208,7 +208,7 @@ You'll see all the resources deployed in the resource group.
 
 ## Page Navigator
 
-[Index: Table of Contents](Index.md)
+[Index: Table of Contents](../../Index.md)
 
 [Prev: Azure Synapse Link Workshop](../../README.md)
 
