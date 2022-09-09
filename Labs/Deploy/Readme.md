@@ -40,6 +40,10 @@ Some of the Azure services provisioned require globally unique name and a “-su
 > [!CAUTION]
 > Make sure you deploy all the resources in the correct order
 
+> [!NOTE]
+> You have to deploy all resources manually.
+> One click deploy will come later
+
 | Order | Azure Service | Name   | Pricing Tier    | How to |
 | :--:  |:----          |:----- | :----   |:----- |
 | 1     | Resource Group | synapse-link |   | [Create a Resource Group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups)
@@ -196,15 +200,6 @@ Follow the instruction to [import a BACPAC file to a database in Azure SQL Datab
 - Authentication type: **SQL Server**
 - Server admin login: **sqladmin**
 - Password: **"WhatEver@Iwant123456"**
-
-## One click deploy
-
-Create ARM Template
-
-## Post Deployment
-
-After the deployment is complete, click 'Go to resource group'.
-You'll see all the resources deployed in the resource group.
 
 ## Page Navigator
 

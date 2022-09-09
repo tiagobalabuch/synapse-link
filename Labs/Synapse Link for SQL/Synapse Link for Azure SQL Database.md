@@ -24,13 +24,12 @@ You will configure the Azure environment to allow data to be transferred from an
 
 ![azuresqldb-reference-architecture](../../media/Synapse%20Link%20for%20Azure%20SQL%20DB/azuresqldb-reference-architecture.png)
 
-- Step 1 - [Configuring linked services for Azure ML](Synapse%20Link%20for%20Cosmos%20DB.md#Configuring-linked-services-for-Azure-ML)
-- Step 2 - [Configuring Synapse Link for CosmosDB](Synapse%20Link%20for%20Cosmos%20DB.md#Configuring-Synapse-Link-for-CosmosDB)
-- Step 3 - [Validating Synapse Link for Cosmos DB](Synapse%20Link%20for%20Cosmos%20DB.md#Validating-Synapse-Link-for-Cosmos-DB)
-- Step 4 - [Configuring linked services for Azure Key Vault](Synapse%20Link%20for%20Cosmos%20DB.md#Configuring-linked-services-for-Azure-Key-Vault)
-- Step 5 - [Configuring linked services for Azure Cognitive Service](Synapse%20Link%20for%20Cosmos%20DB.md#Configuring-linked-services-for-Azure-Cognitive-Service)
-- Step 6 - [Creating an Azure Cognitive Service linked service](Synapse%20Link%20for%20Cosmos%20DB.md#Creating-an-Azure-Cognitive-Service-linked-service)
-- Step 7 -  [Exploring data with Notebooks using Synapse Spark Pool](Synapse%20Link%20for%20Cosmos%20DB.md#Exploring-data-with-Notebooks-using-Synapse-Spark-Pool)
+- Step 1 - [Configuring linked services for Azure ML](Synapse%20Link%20for%20Azure%20SQL%20Database.md#configuring-linked-services-for-azure-ml)
+- Step 2 - [Configuring Synapse Link for Azure SQL Database](Synapse%20Link%20for%20Azure%20SQL%20Database.md#configuring-synapse-link-for-azure-sql-database)
+- Step 3 - [Create an Azure SQL Database linked service](Synapse%20Link%20for%20Azure%20SQL%20Database.md#create-an-azure-sql-database-linked-service)
+- Step 4 - [Create the Azure Synapse Link connection](Synapse%20Link%20for%20Azure%20SQL%20Database.md#create-the-azure-synapse-link-connection)
+- Step 5 - [CExploring data with Notebooks using Synapse Spark Pool](Synapse%20Link%20for%20Azure%20SQL%20Database.md#exploring-data-with-notebooks-using-synapse-spark-pool)
+
 
 ## Configuring linked services for Azure ML
 
@@ -125,19 +124,23 @@ It's time to really create our link between Azure SQL Database and Azure Synapse
 3. Source linked service: **AzureSQLDBLink**
 4. Source tables: **select all**
 ![synapse-studio-create-link-sql-db-settings-source](../../media/Synapse%20Link%20for%20Azure%20SQL%20DB/synapse-studio-create-link-sql-db-settings-source.png)
+
 5. Click '*Continue*'
 6. Target pool: **DW**
 ![synapse-studio-create-link-sql-db-settings-target.](../../media/Synapse%20Link%20for%20Azure%20SQL%20DB/synapse-studio-create-link-sql-db-settings-target.png)
+
 7. Click '*Continue*'
 8. Link connection name: **link-to-azure-sql-db**
 9. Core count: **2 (+ 2 Driver cores)**
 10. Mode: **Continuous**
 ![synapse-studio-create-link-sql-db-settings-connection](../../media/Synapse%20Link%20for%20Azure%20SQL%20DB/synapse-studio-create-link-sql-db-settings-connection.png)
+
 11. Click '*OK*'
 12. Review all the information
 13. Change th structure type of your tables to **HEAP**
 14. Select Publish all to save the new link connection to the service.
 ![synapse-studio-create-link-sql-db-final](../../media/Synapse%20Link%20for%20Azure%20SQL%20DB/synapse-studio-create-link-sql-db-final.png)
+
 15. Then click *Start*
 16. Wait a few minutes for the data to be replicated.
 17. Once you linked started you can click 'Develop' icon in the left panel and click '+ SQL Script'
@@ -187,8 +190,6 @@ _**This notebook uses Spark 3.2**_ - Attach to **demo** Apache Spark Pool
 
 ## Page Navigator
 
-[Index: Table of Contents](Index.md)
+[Index: Table of Contents](../../Index.md)
 
 [Prev: Lab 1 - Azure Synapse Link for Cosmos DB](../Synapse%20Link%20for%20Cosmos%20DB/Synapse%20Link%20for%20Cosmos%20DB.md)
-
-[Next - Lab 2 - Azure Synapse Link for Azure SQL Database](Labs/Synapse%20Link%20for%20SQL/Synapse%20Link%20for%20Azure%20SQL%20Database.md)
