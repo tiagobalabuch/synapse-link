@@ -4,11 +4,11 @@ In this section you will provision all Azure resources required to complete labs
 
 ## Azure Services used in this lab
 
-There will be a few resources to support an Azure Synapse link for CosmosDB:
+There will be a few resources to support an Azure Synapse link:
 
 - An Azure Resource Group
 - An Azure Synapse Workspace
-- An Azure Synapse SQL Pool **rever**
+- An Azure Synapse SQL Pool
 - An Azure Synapse Spark Pool
 - An Azure Data Lake Storage Gen2 account
 - A key vault to store the secrets
@@ -35,7 +35,7 @@ There will be a few resources to support an Azure Synapse link for CosmosDB:
 
 ## Azure services provisioned for the workshop
 
-Some of the Azure services provisioned require globally unique name and a “-suffix” has been added to their names to ensure this uniqueness.
+Some of the Azure services provisioned require a globally unique name and a “-suffix” has been added to their names to ensure uniqueness.
 
 > [!CAUTION]
 > Make sure you deploy all the resources in the correct order
