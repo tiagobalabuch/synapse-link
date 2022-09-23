@@ -16,11 +16,10 @@ You will configure the Azure environment to allow data to be transferred from an
 | Azure SQL Database | [Explore Azure SQL Database](https://docs.microsoft.com/en-us/learn/paths/azure-sql-fundamentals/)| [Azure SQL Database Technical documentation](https://docs.microsoft.com/en-us/azure/azure-sql/?view=azuresql)|
 |Azure Synapse Analytics | [Implement a Data Warehouse with Azure Synapse Analytics](https://docs.microsoft.com/en-us/learn/paths/realize-integrated-analytical-solutions-with-azure-synapse-analytics)| [Azure Synapse Analytics Technical Documentation](https://docs.microsoft.com/en-us/azure/synapse-analytics/)|
 |Azure Data Lake Storage Gen2 | [Large Scale Data Processing with Azure Data Lake Storage Gen2](https://docs.microsoft.com/en-us/learn/paths/data-processing-with-azure-adls) | [Azure Data Lake Storage Gen2 Technical Documentation](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction)|
-|Azure Cognitive Anomaly Detector Services| [Introduction to Anomaly Detector](https://docs.microsoft.com/en-us/learn/modules/intro-to-anomaly-detector/)| [Azure Cognitive Anomaly Detector Technical Documentation](https://docs.microsoft.com/en-us/azure/cognitive-services/anomaly-detector/)|
-|Azure Machine Learning |[Build and operate machine learning solutions with Azure Machine Learning](https://docs.microsoft.com/en-us/learn/paths/build-ai-solutions-with-azure-ml-service/)| [Azure Machine Learning Technical Documentation](https://docs.microsoft.com/en-us/azure/machine-learning/)|
-|Azure Key Vault    |[Configure and manage secrets in Azure Key Vault](https://docs.microsoft.com/bs-latn-ba/learn/modules/configure-and-manage-azure-key-vault/)   |[Azure Key Vault Technical Documentation](https://docs.microsoft.com/en-us/azure/key-vault/)|
+| SynapseML   |[SynapseML Overview](https://microsoft.github.io/SynapseML/)   |[SynapseML Technical Documentation](https://microsoft.github.io/SynapseML/docs/getting_started/installation/)|
+|LightGBM |[LightGBM on Apache Spark](https://microsoft.github.io/SynapseML/docs/features/lightgbm/about/)| [LightGBM Quick Start Technical Documentation](https://lightgbm.readthedocs.io/en/latest/Quick-Start.html/)|
 
-# Lab architecture
+## Lab architecture
 
 ![azuresqldb-reference-architecture](../../media/Synapse%20Link%20for%20Azure%20SQL%20DB/azuresqldb-reference-architecture.png)
 
@@ -29,7 +28,6 @@ You will configure the Azure environment to allow data to be transferred from an
 - Step 3 - [Create an Azure SQL Database linked service](Synapse%20Link%20for%20Azure%20SQL%20Database.md#create-an-azure-sql-database-linked-service)
 - Step 4 - [Create the Azure Synapse Link connection](Synapse%20Link%20for%20Azure%20SQL%20Database.md#create-the-azure-synapse-link-connection)
 - Step 5 - [CExploring data with Notebooks using Synapse Spark Pool](Synapse%20Link%20for%20Azure%20SQL%20Database.md#exploring-data-with-notebooks-using-synapse-spark-pool)
-
 
 ## Configuring linked services for Azure ML
 
@@ -159,7 +157,6 @@ SELECT [id]
  FROM [dbo].[Products]
 ```
 
-
 ## Exploring data with Notebooks using Synapse Spark Pool
 
 Notebooks contain both computer code (e.g. python) and rich text elements (paragraph, equations, figures, links, etc…). Notebooks are both human-readable documents containing the analysis description and the results (figures, tables, etc..) as well as executable documents which can be run to perform data analysis.
@@ -187,7 +184,7 @@ In these notebooks we are going to leverage the power of no ELT/ETL with Azure S
 This notebook will cover:
 
 - Reading data from  Dedicated SQL Pool using Connector for Apache Spark
-  - We are going to read tables that we've just replicated from the Azure SQL DB without performing an ETL/ELT. 
+  - We are going to read tables that we've just replicated from the Azure SQL DB without performing an ETL/ELT.
 - Join & aggregate operational data across Dedicated SQL pool tables
 - Perform Sales forecasting using SynapseML
 
@@ -196,5 +193,7 @@ _**This notebook uses Spark 3.2**_ - Attach to **demo** Apache Spark Pool
 ## Page Navigator
 
 [Index: Table of Contents](../../Index.md)
+
+[Azure Synapse Link Workshop](../../README.md)
 
 [Prev: Lab 1 - Azure Synapse Link for Cosmos DB](../Synapse%20Link%20for%20Cosmos%20DB/Synapse%20Link%20for%20Cosmos%20DB.md)

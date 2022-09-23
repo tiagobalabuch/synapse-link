@@ -207,6 +207,8 @@ _**This notebook uses Spark 3.2**_ - Attach to **demo** Apache Spark Pool
 
 [Index: Table of Contents](Index.md)
 
+[Azure Synapse Link Workshop](../../README.md)
+
 [Prev: Lab 0 - Deploy](../Deploy/Readme.md)
 
 [Next - Lab 2 - Azure Synapse Link for Azure SQL Database](../Synapse%20Link%20for%20SQL/Synapse%20Link%20for%20Azure%20SQL%20Database.md)
